@@ -17,7 +17,7 @@ class Publisher(val key: String, val systemId: String) extends Actor with Stash 
         .header("X-Pvoutput-Apikey",key)
         .header("X-Pvoutput-SystemId",systemId)
         .formParams("d" -> new DateTime().toString("yyyyMMdd"),
-          "t" -> new DateTime().toString("hh:mm"),
+          "t" -> new DateTime().toString("HH:mm"),
           "v2"->ss.gridOutputWatts,
           "v5"->ss.inverterTemperature,
           "v6"->ss.solarVoltage/10)
